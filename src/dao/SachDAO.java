@@ -121,7 +121,7 @@ public class SachDAO extends DAO{
         DefaultTableModel model = new DefaultTableModel(col, 0);
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            String s = maSach + "%";
+            String s = "%" + maSach + "%";
             ps.setString(1, s);
             ResultSet res = ps.executeQuery();
             while(res.next()) {
@@ -146,7 +146,7 @@ public class SachDAO extends DAO{
         DefaultTableModel model = new DefaultTableModel(col, 0);
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            String s = tenSach + "%";
+            String s = "%" + tenSach + "%";
             ps.setString(1, s);
             ResultSet res = ps.executeQuery();
             while(res.next()) {
@@ -171,7 +171,7 @@ public class SachDAO extends DAO{
         DefaultTableModel model = new DefaultTableModel(col, 0);
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            String s = tacGia + "%";
+            String s = "%" + tacGia + "%";
             ps.setString(1, s);
             ResultSet res = ps.executeQuery();
             while(res.next()) {
@@ -196,7 +196,7 @@ public class SachDAO extends DAO{
         DefaultTableModel model = new DefaultTableModel(col, 0);
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            String s = nhaXuatBan + "%";
+            String s = "%" + nhaXuatBan + "%";
             ps.setString(1, s);
             ResultSet res = ps.executeQuery();
             while(res.next()) {
