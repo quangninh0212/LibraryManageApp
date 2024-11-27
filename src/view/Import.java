@@ -21,7 +21,7 @@ public class Import extends javax.swing.JFrame {
      */
     public Import() {
         initComponents();
-        Image img = new ImageIcon(this.getClass().getResource("/library3.png")).getImage();
+        Image img = new ImageIcon(this.getClass().getResource("/icon/library3.png")).getImage();
         this.setIconImage(img);
     }
     public void showTongSoLuongSach() {

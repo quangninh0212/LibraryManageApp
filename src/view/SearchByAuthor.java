@@ -5,6 +5,8 @@
 package view;
 
 import dao.SachDAO;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,6 +21,8 @@ public class SearchByAuthor extends javax.swing.JFrame {
      */
     public SearchByAuthor() {
         initComponents();
+        Image img = new ImageIcon(this.getClass().getResource("/icon/library3.png")).getImage();
+        this.setIconImage(img);
     }
     
     public void showTable(String tacGia) {

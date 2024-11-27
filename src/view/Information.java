@@ -18,7 +18,7 @@ public class Information extends javax.swing.JFrame {
      */
     public Information() {
         initComponents();
-        Image img = new ImageIcon(this.getClass().getResource("/library3.png")).getImage();
+        Image img = new ImageIcon(this.getClass().getResource("/icon/library3.png")).getImage();
         this.setIconImage(img);
     }
 

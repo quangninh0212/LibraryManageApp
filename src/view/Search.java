@@ -4,6 +4,9 @@
  */
 package view;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author admin
@@ -15,6 +18,8 @@ public class Search extends javax.swing.JFrame {
      */
     public Search() {
         initComponents();
+        Image img = new ImageIcon(this.getClass().getResource("/icon/library3.png")).getImage();
+        this.setIconImage(img);
     }
 
     /**

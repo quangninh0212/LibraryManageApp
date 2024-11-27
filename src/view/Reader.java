@@ -23,7 +23,7 @@ public class Reader extends javax.swing.JFrame {
      */
     public Reader() {
         initComponents();
-        Image img = new ImageIcon(this.getClass().getResource("/library3.png")).getImage();
+        Image img = new ImageIcon(this.getClass().getResource("/icon/library3.png")).getImage();
         this.setIconImage(img);
     }
     
