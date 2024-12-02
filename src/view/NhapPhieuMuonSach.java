@@ -9,6 +9,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import model.PhieuMuonSach;
+import util.NgayThangNam;
 
 /**
  *
@@ -23,12 +24,14 @@ public class NhapPhieuMuonSach extends javax.swing.JFrame {
         initComponents();
         Image img = new ImageIcon(this.getClass().getResource("/icon/library3.png")).getImage();
         this.setIconImage(img);
+        
+        txtNgayMuon.setText(NgayThangNam.getDate());
     }
     
     public void clearData() {
         txtMaDG.setText("");
         txtMaSach.setText("");
-        txtNgayMuon.setText("");
+        txtNgayMuon.setText(NgayThangNam.getDate());
     }
 
     /**
@@ -95,7 +98,6 @@ public class NhapPhieuMuonSach extends javax.swing.JFrame {
         txtMaSach.setPreferredSize(new java.awt.Dimension(81, 29));
 
         txtSoLuong.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        txtSoLuong.setForeground(new java.awt.Color(255, 0, 51));
         txtSoLuong.setText("1");
         txtSoLuong.setPreferredSize(new java.awt.Dimension(64, 29));
 
@@ -109,7 +111,6 @@ public class NhapPhieuMuonSach extends javax.swing.JFrame {
         jLabel5.setText("Mã ĐG:");
 
         txtMaMuon.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        txtMaMuon.setForeground(new java.awt.Color(255, 0, 51));
         txtMaMuon.setText("Tự động điền");
         txtMaMuon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,7 +231,10 @@ public class NhapPhieuMuonSach extends javax.swing.JFrame {
         PhieuMuonSachDAO phieuMuonDAO = new PhieuMuonSachDAO();
         String maDG = txtMaDG.getText();
         String maSach = txtMaSach.getText();
+        
+        txtNgayMuon.setText(NgayThangNam.getDate());
         String ngayMuon = txtNgayMuon.getText();
+        
         int soLuong = Integer.parseInt(txtSoLuong.getText());
         int tinhTrang = 1;
         PhieuMuonSach phieu = new PhieuMuonSach(maDG, maSach, ngayMuon, soLuong, tinhTrang);
