@@ -82,7 +82,7 @@ public class Information extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setText("Tên TK: DANG QUANG NINH");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anhthe.jpg"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/banking.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
