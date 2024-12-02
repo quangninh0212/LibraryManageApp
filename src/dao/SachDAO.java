@@ -46,15 +46,21 @@ public class SachDAO extends DAO{
         }
     }
     
-    public void deleteSach(String maSach) {
+    public boolean deleteSach(String maSach) {
         String sql = "delete from books where maSach = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, maSach);
-            ps.executeUpdate();
+            int row = ps.executeUpdate();
+            if(row != 0) {
+                return true;
+            }
+            else
+                return false;
         }
         catch(Exception ex) {
             ex.printStackTrace();
+            return false;
         }
     }
     

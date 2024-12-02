@@ -393,8 +393,10 @@ public class Reader extends javax.swing.JFrame {
         int possition = tableMain.getSelectedRow();
         String maDG = tableMain.getModel().getValueAt(possition, 0).toString();
         DocGiaDAO docGiaDAO = new DocGiaDAO();
-        docGiaDAO.deleteDocGia(maDG);
-        JOptionPane.showMessageDialog(this, "Susccessful !");
+        if(docGiaDAO.deleteDocGia(maDG))
+            JOptionPane.showMessageDialog(this, "Susccessful !");
+        else
+            JOptionPane.showMessageDialog(this, "Failed !");
         showTable();
     }//GEN-LAST:event_btnDeleteActionPerformed
 

@@ -377,8 +377,10 @@ public class Import extends javax.swing.JFrame {
         int possition = tableMain.getSelectedRow();
         String maSach = tableMain.getModel().getValueAt(possition, 0).toString();
         SachDAO sachDao = new SachDAO();
-        sachDao.deleteSach(maSach);
-        JOptionPane.showMessageDialog(this, "Susccessful !");
+        if(sachDao.deleteSach(maSach))
+            JOptionPane.showMessageDialog(this, "Susccessful !");
+        else
+            JOptionPane.showMessageDialog(this, "Failed !");
         showTable();
         showTongSoLuongSach();
     }//GEN-LAST:event_btnDeleteActionPerformed

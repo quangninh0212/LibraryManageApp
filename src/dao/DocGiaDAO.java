@@ -46,16 +46,21 @@ public class DocGiaDAO extends DAO{
         }
     }
     
-    public void deleteDocGia(String maDG) {
+    public boolean deleteDocGia(String maDG) {
         String sql = "delete from people where maDG = ?";
         
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, maDG);
-            ps.executeUpdate();
+            int cnt = ps.executeUpdate();
+            if(cnt != 0)
+                return true;
+            else
+                return false;
         }
         catch(Exception ex) {
             ex.printStackTrace();
+            return false;
         }
     }
     

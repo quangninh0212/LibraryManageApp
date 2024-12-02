@@ -276,9 +276,14 @@ public class Borrow extends javax.swing.JFrame {
         int possition = tableMain.getSelectedRow();
         String maMuon = tableMain.getModel().getValueAt(possition, 0).toString();
         int ma = Integer.parseInt(maMuon);
-        PhieuMuonSachDAO phieuMuonDAO = new PhieuMuonSachDAO();
-        phieuMuonDAO.deletePhieuMuonSach(ma);
-        JOptionPane.showMessageDialog(this, "Susccessful !");
+        String tinhTrang = tableMain.getModel().getValueAt(possition, 7).toString();
+        if(tinhTrang.equals("Đã trả")) {
+            PhieuMuonSachDAO phieuMuonDAO = new PhieuMuonSachDAO();
+            phieuMuonDAO.deletePhieuMuonSach(ma);
+            JOptionPane.showMessageDialog(this, "Susccessful !");
+        }
+        else
+            JOptionPane.showMessageDialog(this, "Failed !");
         showTable();
         showTongSoDocGiaMuonSach();
     }//GEN-LAST:event_btnDeleteActionPerformed
