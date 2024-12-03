@@ -21,6 +21,7 @@ public class SearchByBookName extends javax.swing.JFrame {
      */
     public SearchByBookName() {
         initComponents();
+        setLocationRelativeTo(null);
         Image img = new ImageIcon(this.getClass().getResource("/icon/library3.png")).getImage();
         this.setIconImage(img);
     }

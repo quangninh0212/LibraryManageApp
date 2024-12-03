@@ -18,6 +18,7 @@ public class Analytic extends javax.swing.JFrame {
      */
     public Analytic() {
         initComponents();
+        setLocationRelativeTo(null);
         Image img = new ImageIcon(this.getClass().getResource("/icon/library3.png")).getImage();
         this.setIconImage(img);
     }
