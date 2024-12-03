@@ -161,7 +161,7 @@ public class Login extends javax.swing.JFrame {
             Home home = new Home();
             home.setVisible(true);
             home.setLocationRelativeTo(null);
-            this.dispose();
+            //this.dispose();
         }
         else {
             JOptionPane.showMessageDialog(this, "Tai khoan hoac mat khau khong dung, vui long thu lai !");
