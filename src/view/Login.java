@@ -157,14 +157,14 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         String matKhau = String.valueOf(txtMatKhau.getPassword());
         if(txtTaiKhoan.getText().equals("admin") && matKhau.equals("admin")) {
-            JOptionPane.showMessageDialog(this, "Dang nhap thanh cong !");
+            JOptionPane.showMessageDialog(this, "Đăng nhập thành công !");
             Home home = new Home();
             home.setVisible(true);
             home.setLocationRelativeTo(null);
             //this.dispose();
         }
         else {
-            JOptionPane.showMessageDialog(this, "Tai khoan hoac mat khau khong dung, vui long thu lai !");
+            JOptionPane.showMessageDialog(this, "Tài khoản hoặc mật khẩu không đúng, vui lòng thử lại !");
         }
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
