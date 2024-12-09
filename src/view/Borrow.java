@@ -29,7 +29,7 @@ public class Borrow extends javax.swing.JFrame {
     public void showTongSoDocGiaMuonSach() {
         String s = "";
         s += new PhieuMuonSachDAO().getSoLuongDocGiaMuonSach();
-        txtTongSoDocGia.setText(s);
+        labelSoDocGia.setText(s);
     }
     
     public void showTable() {
@@ -53,10 +53,10 @@ public class Borrow extends javax.swing.JFrame {
         btnNhapPhieuMuon = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        txtTongSoDocGia = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         btnTraSach = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        labelSoDocGia = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("MƯỢN SÁCH");
@@ -127,13 +127,6 @@ public class Borrow extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 0, 51));
         jLabel10.setText("Tổng số độc giả mượn sách:");
 
-        txtTongSoDocGia.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        txtTongSoDocGia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTongSoDocGiaActionPerformed(evt);
-            }
-        });
-
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel12.setText("độc giả");
 
@@ -157,6 +150,9 @@ public class Borrow extends javax.swing.JFrame {
             }
         });
 
+        labelSoDocGia.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        labelSoDocGia.setText("10");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -179,10 +175,10 @@ public class Borrow extends javax.swing.JFrame {
                         .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
+                        .addGap(34, 34, 34)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTongSoDocGia, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelSoDocGia)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel12)))
                 .addGap(33, 33, 33))
@@ -207,11 +203,11 @@ public class Borrow extends javax.swing.JFrame {
                             .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
+                        .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(txtTongSoDocGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))))
+                            .addComponent(jLabel12)
+                            .addComponent(labelSoDocGia))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -235,10 +231,6 @@ public class Borrow extends javax.swing.JFrame {
         home.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_formWindowClosed
-
-    private void txtTongSoDocGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTongSoDocGiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTongSoDocGiaActionPerformed
 
     private void btnNhapPhieuMuonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhapPhieuMuonActionPerformed
         // TODO add your handling code here:
@@ -334,7 +326,7 @@ public class Borrow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelSoDocGia;
     private javax.swing.JTable tableMain;
-    private javax.swing.JTextField txtTongSoDocGia;
     // End of variables declaration//GEN-END:variables
 }
