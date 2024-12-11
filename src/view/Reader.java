@@ -41,6 +41,12 @@ public class Reader extends javax.swing.JFrame {
         DefaultTableModel model = new DocGiaDAO().getListDocGia();
         tableMain.setModel(model);
     }
+    
+    public void showTongSoDocGia() {
+        String s = "";
+        s += new DocGiaDAO().getSoLuongDocGia();
+        labelSoDocGia.setText(s);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -70,6 +76,9 @@ public class Reader extends javax.swing.JFrame {
         tableMain = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        labelSoDocGia = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("QUẢN LÝ ĐỘC GIẢ");
@@ -217,6 +226,16 @@ public class Reader extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 0, 51));
         jLabel9.setText("Lưu ý: Độc giả muốn tham gia mượn sách thì phải đăng ký(thêm)");
 
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel10.setText("Tổng số độc giả:");
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel12.setText("độc giả");
+
+        labelSoDocGia.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        labelSoDocGia.setText("10");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -267,9 +286,16 @@ public class Reader extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 811, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 811, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelSoDocGia)
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel12)))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -316,7 +342,11 @@ public class Reader extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel12)
+                    .addComponent(labelSoDocGia)))
         );
 
         pack();
@@ -366,6 +396,7 @@ public class Reader extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Successful !");
             clearData();
             showTable();
+            showTongSoDocGia();
         }
         else {
             JOptionPane.showMessageDialog(this, "Failed !");
@@ -399,11 +430,13 @@ public class Reader extends javax.swing.JFrame {
         else
             JOptionPane.showMessageDialog(this, "Failed !");
         showTable();
+        showTongSoDocGia();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
         showTable();
+        showTongSoDocGia();
     }//GEN-LAST:event_formComponentShown
 
     /**
@@ -448,7 +481,9 @@ public class Reader extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboDoiTuong;
     private javax.swing.JComboBox<String> comboGioiTinh;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -458,6 +493,7 @@ public class Reader extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelSoDocGia;
     private javax.swing.JTable tableMain;
     private javax.swing.JTextField txtHoTen;
     private javax.swing.JTextField txtMaDG;

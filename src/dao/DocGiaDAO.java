@@ -106,8 +106,18 @@ public class DocGiaDAO extends DAO{
         return arr;
     }
     
-//    public int getCountDG() {
-//        
-//    }
-
+    public int getSoLuongDocGia() {
+        String sql = "select count(maDG) from people";
+        try {
+            Statement st = con.createStatement();
+            ResultSet res = st.executeQuery(sql);
+            while(res.next()) {
+                return res.getInt(1);
+            }
+        }
+        catch(Exception ex) {
+            ex.printStackTrace();
+        }
+        return -1;
+    }
 }
